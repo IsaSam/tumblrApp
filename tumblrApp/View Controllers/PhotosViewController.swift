@@ -12,7 +12,7 @@ class PhotosViewController: UIViewController {
     
     //Initialize an empty array
     // 1.       2.             3.
-    var posts: [[String: Any]] = []
+    var posts: [[String: Any]] = [] 
 
     override func viewDidLoad() {
         super.viewDidLoad()
