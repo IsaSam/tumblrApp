@@ -9,6 +9,9 @@
 import UIKit
 
 class PhotosViewController: UIViewController {
+   
+    @IBOutlet var tableView: UITableView!
+    
     
     //Initialize an empty array
     // 1.       2.             3.
@@ -16,6 +19,9 @@ class PhotosViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         // Network request snippet
         let url = URL(string: "https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV")!
@@ -36,6 +42,23 @@ class PhotosViewController: UIViewController {
         }
         task.resume()
 
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> Int {
+        return 5
+    }
+   /*
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "This is row \(indexPath.row)"
+        
+        return cell
+    }*/
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: NSIndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell") as! PhotoCell
+        
+        // Configure PhotoCell using the outlets that you've defined.
+        return cell
     }
 
     override func didReceiveMemoryWarning() {
