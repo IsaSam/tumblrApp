@@ -8,7 +8,8 @@
 
 import UIKit
 
-class PhotosViewController: UIViewController {
+
+class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     @IBOutlet var tableView: UITableView!
     
@@ -41,11 +42,19 @@ class PhotosViewController: UIViewController {
             }
         }
         task.resume()
+       // tableView.dataSource = self
 
     }
     
+    /*
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> Int {
         return 5
+    }*/
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 5       //no. of rows in the section
+        
     }
    /*
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
@@ -54,13 +63,14 @@ class PhotosViewController: UIViewController {
         
         return cell
     }*/
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: NSIndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell") as! PhotoCell
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         
         // Configure PhotoCell using the outlets that you've defined.
         return cell
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
