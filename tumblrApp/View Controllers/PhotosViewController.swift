@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 
 class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -80,6 +81,8 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
             // Create a URL using the urlString
             let url = URL(string: urlString)
             
+            // call the AlamofireImage method
+            cell.PhotoImageView.af_setImage(withURL: url!)
         }
         
         // Configure PhotoCell using the outlets that you've defined.
