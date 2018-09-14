@@ -40,6 +40,8 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 // Store the returned array of dictionaries in our posts property
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
                 
+                self.tableView.reloadData()
+                
             }
         }
         task.resume()
@@ -54,7 +56,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5       //no. of rows in the section
+        return posts.count       //no. of rows in the section
         
     }
    /*
