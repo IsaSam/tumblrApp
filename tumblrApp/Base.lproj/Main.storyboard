@@ -18,15 +18,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="156" id="se5-hD-BWf" customClass="PhotoCell" customModule="tumblrApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="156"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="237" id="se5-hD-BWf" customClass="PhotoCell" customModule="tumblrApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="237"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="se5-hD-BWf" id="cpT-Qw-deP">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="155.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="236.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yct-JX-cWv">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yct-JX-cWv">
+                                            <rect key="frame" x="0.15351786915425691" y="-6.0949192804032464" width="318.00000000000023" height="251"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>

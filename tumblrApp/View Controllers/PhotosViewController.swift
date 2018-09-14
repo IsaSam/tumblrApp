@@ -56,7 +56,11 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+<<<<<<< HEAD
         return posts.count       //no. of rows in the section
+=======
+        return 5       //no. of rows in the section
+>>>>>>> 5903cfdbcacf7a0f632e8c9c23bd4b1015a827c8
         
     }
    /*
@@ -69,6 +73,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
+<<<<<<< HEAD
         let post = posts[indexPath.row]
         if let photos = post["photos"] as? [[String: Any]]{
             // photos is NOT nil, we can use it!
@@ -86,6 +91,8 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
             // call the AlamofireImage method
             cell.PhotoImageView.af_setImage(withURL: url!)
         }
+=======
+>>>>>>> 5903cfdbcacf7a0f632e8c9c23bd4b1015a827c8
         
         // Configure PhotoCell using the outlets that you've defined.
         return cell
