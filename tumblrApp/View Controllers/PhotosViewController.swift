@@ -8,7 +8,8 @@
 
 import UIKit
 
-class PhotosViewController: UIViewController {
+
+class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     @IBOutlet var tableView: UITableView!
     
@@ -41,11 +42,19 @@ class PhotosViewController: UIViewController {
             }
         }
         task.resume()
+       // tableView.dataSource = self
 
     }
     
+    /*
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> Int {
         return 5
+    }*/
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 5       //no. of rows in the section
+        
     }
    /*
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
@@ -54,13 +63,29 @@ class PhotosViewController: UIViewController {
         
         return cell
     }*/
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: NSIndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell") as! PhotoCell
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
+        let post = posts[indexPath.row]
+        if let photos = post["photos"] as? [[String: Any]]{
+            // photos is NOT nil, we can use it!
+            // todo: get the photo url
+            
+            // Get the first photo in the photos array
+            let photo = photos[0]
+            // Get the original size dictionary from the photo
+            let originalSize =  photo["original_size"] as! [String: Any]
+            // Get the url string from the original size dictionary
+            let urlString = originalSize["url"] as! String
+            // Create a URL using the urlString
+            let url = URL(string: urlString)
+            
+        }
         
         // Configure PhotoCell using the outlets that you've defined.
         return cell
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
