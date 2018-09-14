@@ -11,14 +11,14 @@ import AlamofireImage
 
 
 class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
+    
     @IBOutlet var tableView: UITableView!
     
     
     //Initialize an empty array
     // 1.       2.             3.
-    var posts: [[String: Any]] = [] 
-
+    var posts: [[String: Any]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,35 +45,30 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         task.resume()
-       // tableView.dataSource = self
-
+        // tableView.dataSource = self
+        
     }
     
     /*
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> Int {
-        return 5
-    }*/
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> Int {
+     return 5
+     }*/
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-<<<<<<< HEAD
         return posts.count       //no. of rows in the section
-=======
-        return 5       //no. of rows in the section
->>>>>>> 5903cfdbcacf7a0f632e8c9c23bd4b1015a827c8
         
     }
-   /*
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "This is row \(indexPath.row)"
-        
-        return cell
-    }*/
+    /*
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+     let cell = UITableViewCell()
+     cell.textLabel?.text = "This is row \(indexPath.row)"
+     
+     return cell
+     }*/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
-<<<<<<< HEAD
         let post = posts[indexPath.row]
         if let photos = post["photos"] as? [[String: Any]]{
             // photos is NOT nil, we can use it!
@@ -91,8 +86,6 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
             // call the AlamofireImage method
             cell.PhotoImageView.af_setImage(withURL: url!)
         }
-=======
->>>>>>> 5903cfdbcacf7a0f632e8c9c23bd4b1015a827c8
         
         // Configure PhotoCell using the outlets that you've defined.
         return cell
@@ -103,15 +96,15 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
