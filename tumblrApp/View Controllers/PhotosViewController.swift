@@ -9,15 +9,14 @@
 import UIKit
 import AlamofireImage
 
-
 class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     
     
     //Initialize an empty array
-    // 1.       2.             3.
     var posts: [[String: Any]] = []
+    var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +26,23 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         tableView.rowHeight = 168
         tableView.estimatedRowHeight = 200
-       // tableView.rowHeight = UITableViewAutomaticDimension
         
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(PhotosViewController.didPullToRefresh(_:)), for: .valueChanged)
         
+        tableView.insertSubview(refreshControl, at: 0)
+        
+        tableView.dataSource = self
+        fetchPhotos()
+        didPullToRefresh(refreshControl)
+    }
+    
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
+        
+        fetchPhotos()
+    }
+    
+    func fetchPhotos(){
         // Network request snippet
         let url = URL(string: "https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV")!
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
@@ -44,21 +57,15 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let responseDictionary = dataDictionary["response"] as! [String: Any]
                 // Store the returned array of dictionaries in our posts property
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
-                
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
                 
             }
         }
         task.resume()
-        // tableView.dataSource = self
-        
     }
     
-    /*
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> Int {
-     return 5
-     }*/
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return posts.count       //no. of rows in the section
