@@ -78,10 +78,10 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // -------
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 25))
         headerView.backgroundColor = UIColor(white: 1, alpha: 0.9)
         
-        let profileView = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        let profileView = UIImageView(frame: CGRect(x: 10, y: 0, width: 30, height: 30))
         profileView.clipsToBounds = true
         profileView.layer.cornerRadius = 15;
         profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).cgColor
@@ -91,7 +91,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         profileView.af_setImage(withURL: URL(string: "https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/avatar")!)
         headerView.addSubview(profileView)
         
-        let dateLabel = UILabel(frame: CGRect(x: 50, y: 10, width: 200, height: 30))
+        let dateLabel = UILabel(frame: CGRect(x: 50, y: 5, width: 250, height: 15))
         let post = posts[section]
         if let date = post["date"] as? String {
             dateLabel.text = date
