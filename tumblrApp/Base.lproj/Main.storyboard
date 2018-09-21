@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,6 +34,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="PhotoImageView" destination="yct-JX-cWv" id="Thh-yO-0Wc"/>
+                                    <segue destination="RrT-dE-hpj" kind="show" identifier="imagePhotoSegue" id="X0Q-yr-5zb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -45,6 +47,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzI-Ng-ZeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2416.875" y="29.577464788732396"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="yQd-Qo-lxY">
+            <objects>
+                <viewController id="RrT-dE-hpj" customClass="PhotoDetailsViewController" customModule="tumblrApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xkf-eM-ofq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PAv-ZZ-5Yf">
+                                <rect key="frame" x="0.0" y="73" width="320" height="423"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UXx-aL-8Gn"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoDetailsView" destination="PAv-ZZ-5Yf" id="cMK-Cd-AoW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nLo-e3-cNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3256.875" y="34.859154929577464"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VMo-jE-qTV">

@@ -10,9 +10,9 @@ import UIKit
 import AlamofireImage
 
 class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
     @IBOutlet var tableView: UITableView!
     
+    var image: UIImage!
     
     //Initialize an empty array
     var posts: [[String: Any]] = []
@@ -59,33 +59,21 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
-                
             }
         }
         task.resume()
     }
-    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return posts.count       //no. of rows in the section
-        
     }
-    /*
+   
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-     let cell = UITableViewCell()
-     cell.textLabel?.text = "This is row \(indexPath.row)"
-     
-     return cell
-     }*/
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         let post = posts[indexPath.row]
         if let photos = post["photos"] as? [[String: Any]]{
             // photos is NOT nil, we can use it!
             // todo: get the photo url
-            
             // Get the first photo in the photos array
             let photo = photos[0]
             // Get the original size dictionary from the photo
@@ -98,25 +86,22 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
             // call the AlamofireImage method
             cell.PhotoImageView.af_setImage(withURL: url!)
         }
-        
         // Configure PhotoCell using the outlets that you've defined.
         return cell
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! PhotoDetailsViewController
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let post = posts[indexPath.row]
+        let photos = post["photos"] as! [[String: Any]]
+        let photo = photos[0]
+        let originalSize = photo["original_size"] as! [String: Any]
+        let urlString = originalSize["url"] as! String
+        vc.imageURL = URL(string: urlString)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
