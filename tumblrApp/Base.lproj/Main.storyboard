@@ -13,17 +13,17 @@
         <!--Photos View Controller-->
         <scene sceneID="5SL-9y-KSO">
             <objects>
-                <viewController id="5X6-2p-cVD" customClass="PhotosViewController" customModule="tumblrApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="partialCurl" id="5X6-2p-cVD" customClass="PhotosViewController" customModule="tumblrApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" estimatedRowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" id="HWm-Ux-Aax">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="156" id="se5-hD-BWf" customClass="PhotoCell" customModule="tumblrApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="156" id="se5-hD-BWf" customClass="PhotoCell" customModule="tumblrApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="se5-hD-BWf" id="cpT-Qw-deP">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="155.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="286" height="155.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yct-JX-cWv">
@@ -34,7 +34,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="PhotoImageView" destination="yct-JX-cWv" id="Thh-yO-0Wc"/>
-                                    <segue destination="RrT-dE-hpj" kind="show" identifier="imagePhotoSegue" id="X0Q-yr-5zb"/>
+                                    <segue destination="RrT-dE-hpj" kind="modal" identifier="imagePhotoSegue" modalTransitionStyle="partialCurl" id="X0Q-yr-5zb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -60,10 +60,19 @@
                                 <rect key="frame" x="0.0" y="73" width="320" height="423"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Close" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="P8e-QN-TBN">
+                                <rect key="frame" x="10" y="35" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="UXx-aL-8Gn"/>
                     </view>
+                    <navigationItem key="navigationItem" id="GPb-zG-f8i"/>
                     <connections>
                         <outlet property="photoDetailsView" destination="PAv-ZZ-5Yf" id="cMK-Cd-AoW"/>
                     </connections>

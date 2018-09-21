@@ -63,7 +63,6 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         task.resume()
     }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count       //no. of rows in the section
     }
