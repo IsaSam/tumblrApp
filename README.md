@@ -1,10 +1,10 @@
-# Lab 1 - *tumblrApp*
+# Lab 1 & 2 *tumblrApp*
 
 **tumblrApp** is a photo browsing app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
 
 Time spent: **8** hours spent in total
 
-## User Stories
+## User Stories Lab 1
 
 The following **required** user stories are complete:
 
@@ -35,7 +35,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Time spent: **3** hours spent in total
 
-## User Stories
+## User Stories Lab 2
 
 The following **required** user stories are complete:
 
@@ -43,18 +43,20 @@ The following **required** user stories are complete:
 
 The following **stretch** user stories are implemented:
 
-- [ ] Add Avatar and Publish Dates (+2pt)
+- [X] Add Avatar and Publish Dates (+2pt)
 - [ ] Zoomable Photo View (+2pt)
 - [ ] Infinite Scrolling (+2pt)
 
 The following **additional** user stories are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality! (+1-3pts)
+- [X] List anything else that you can get done to improve the app functionality! (+1-3pts)
+[X] Using modal Transition 
+
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='tumblrImageGif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='tumblrImageGif2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

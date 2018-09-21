@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photos View Controller-->
+        <!--Tumblr App-->
         <scene sceneID="5SL-9y-KSO">
             <objects>
-                <viewController modalTransitionStyle="partialCurl" id="5X6-2p-cVD" customClass="PhotosViewController" customModule="tumblrApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Tumblr App" modalTransitionStyle="partialCurl" id="5X6-2p-cVD" customClass="PhotosViewController" customModule="tumblrApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" estimatedRowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" id="HWm-Ux-Aax">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -60,10 +60,13 @@
                                 <rect key="frame" x="0.0" y="73" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Close" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="20" id="P8e-QN-TBN">
-                                <rect key="frame" x="10" y="35" width="52" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Close" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" minimumFontSize="20" id="P8e-QN-TBN">
+                                <rect key="frame" x="8" y="35" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" selected="YES"/>
+                                </accessibility>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
