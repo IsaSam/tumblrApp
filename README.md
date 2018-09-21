@@ -29,6 +29,11 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 1.
 2.
+## Video Walkthrough Lab 1
+
+Here's a walkthrough of implemented user stories:
+
+<img src='tumblrImageGif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 # Lab 2 - *TumblrApp - Details Screen*
 
 **TumblrApp** is a photo browsing app app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
@@ -52,7 +57,7 @@ The following **additional** user stories are implemented:
 - [X] List anything else that you can get done to improve the app functionality! (+1-3pts)
 [X] Using modal Transition 
 
-## Video Walkthrough
+## Video Walkthrough Lab 2
 
 Here's a walkthrough of implemented user stories:
 
