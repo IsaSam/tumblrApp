@@ -11,14 +11,8 @@ import UIKit
 
 class PhotoDetailsViewController: UIViewController {
     @IBOutlet weak var photoDetailsView: UIImageView!
-    
-    var image: UIImage!
+
     var imageURL: URL!
-    var post: [NSDictionary]?
-    var photos: [NSDictionary]?
-    //var photo: [[String: Any]] = []
-    
-    //var imageUrl: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
